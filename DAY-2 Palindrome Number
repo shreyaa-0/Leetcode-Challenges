@@ -14,3 +14,28 @@ public class Solution {
     }
 
 }
+
+
+
+Explanation:
+
+1. **Objective**: The code aims to determine whether a given non-negative integer `x` is a palindrome or not.
+
+2. **Handling Negative Numbers**: If `x` is negative, it's not considered a palindrome, so the code immediately returns `false`.
+
+3. **Reversing Digits**:
+   - The code uses a `while` loop to reverse the digits of the non-negative integer.
+   - Inside the loop, it repeatedly extracts the last digit (`temp % 10`), updates the reversed number (`rev`), and removes the last digit from `temp` (`temp /= 10`).
+
+4. **Comparison**: After the loop, the reversed number (`rev`) is compared with the original number (`x`).
+   - If they are equal, it means the number is a palindrome, and the method returns `true`.
+   - If not equal, the method returns `false`.
+
+5. **Algorithm Steps**:
+   - Initialize `temp` with the original number.
+   - Initialize `rev` to 0.
+   - Repeat until `temp` becomes 0:
+      - Extract the last digit from `temp`.
+      - Update `rev` by shifting digits and adding the current digit.
+      - Remove the last digit from `temp`.
+   - Compare the reversed number with the original to determine if it's a palindrome.
