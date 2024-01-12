@@ -12,3 +12,37 @@ public class Solution {
         return null;
     }
 }
+
+
+**Problem:**
+Given an array of integers `nums` and an integer `target`, return indices of the two numbers such that they add up to the `target`.
+
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+
+**Example:**
+```
+Input: nums = [2, 7, 11, 15], target = 9
+Output: [0, 1]
+```
+
+**Explanation:**
+`nums[0] + nums[1] = 2 + 7 = 9`, so the output is `[0, 1]`.
+
+Now, let's break down the code:
+
+1. **Dictionary<int, int> map**: This dictionary is used to store the elements of the array as keys and their corresponding indices as values.
+
+2. **for loop**: It iterates through the array `nums`.
+
+3. **complement**: Calculates the complement value, which is the difference between the `target` and the current element `nums[i]`.
+
+4. **if (map.ContainsKey(complement))**: Checks if the complement is already present in the dictionary. If yes, it means we have found a pair whose sum is equal to the target, and it returns the indices of those two elements.
+
+5. **map[nums[i]] = i**: Updates the dictionary by adding the current element and its index.
+
+6. If the loop completes without finding a pair, it returns `null`, indicating that there is no such pair in the array.
+
+
+
+
+
