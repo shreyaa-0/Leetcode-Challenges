@@ -1,0 +1,35 @@
+class Solution {
+    public:
+     bool isValid(string s) {
+        stack<char>st;
+
+    // Iterate through each character in the input string
+
+        for(auto i : s){
+            if(i=='('||i=='['||i=='{'){
+                st.push(i);    // Push opening brackets onto the stack
+            }
+            else
+            {
+// Check for matching closing brackets
+                if(st.empty()||(st.top()=='('&& i!=')')||(st.top()=='{'&& i!='}')||(st.top()=='['&& i!=']'))
+                {
+                    return false;          // Invalid closing bracket encountered
+                }
+                else
+                {
+                    st.pop();     // Pop the matching opening bracket from the stack
+            }
+                }
+            }
+        }
+        return st.empty();        // If the stack is empty, all brackets are balanced
+
+    }
+};
+
+
+
+
+
+
