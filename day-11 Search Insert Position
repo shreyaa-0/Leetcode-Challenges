@@ -1,0 +1,21 @@
+class Solution {
+    public int searchInsert(int[] nums, int target) {
+        int s=0;    // Start pointer
+        int e=nums.length-1;     // End pointer
+        while(s<=e){       // Binary search loop
+            int mid=(s+e)/2;      // Calculate the midpoint
+            if(nums[mid]==target){        // If target is found, return the index
+                return mid;
+            }
+            else if(nums[mid]>target){        
+                e=mid-1;                  // If target is less than mid, search left half
+            }
+            else{                
+                s=mid+1;              // If target is greater than mid, search right half
+            }
+        }
+              // If the loop exits, target was not found, return the position to insert
+
+        return s;
+    }
+}
