@@ -1,0 +1,23 @@
+class Solution {
+    public int strStr(String haystack, String needle) {
+              // Iterate through the haystack string
+
+        for(int i=0;i<haystack.length()-needle.length()+1;i++){
+                      // Check if the character at the current index matches the first character of the needle
+
+            if(haystack.charAt(i)==needle.charAt(0)){
+                              // Extract a substring from haystack starting from the current index, having the same length as needle 
+
+              
+                // Check if the extracted substring equals the needle string, If yes, return the current index
+              if(haystack.substring(i,needle.length()+i).equals(needle)){
+                    return i;
+                }
+            }
+        }
+              // If no match is found, return -1
+
+                    return -1;
+
+    }
+}
