@@ -1,0 +1,21 @@
+class Solution {
+    public int[] plusOne(int[] digits) {
+        int n=digits.length;    // Length of the digits array
+        for(int i=n-1;i>=0;i--){                    // Iterate through the digits array from right to left
+
+            if(digits[i]<9){                // Check if the current digit is less than 9
+                // If yes, increment the digit by 1 and return the array
+
+                digits[i]++;
+                return digits;
+            }
+            else                         // If the current digit is 9, set it to 0 (carry)
+
+                digits[i]=0;
+        }
+        int[] newnum=new int[n+1];                   // If the loop completes, it means all digits were 9s, so create a new array
+
+        newnum[0]=1;          // Set the most significant digit to 1 (carry)
+        return newnum;        // Return the new array
+        }
+}
