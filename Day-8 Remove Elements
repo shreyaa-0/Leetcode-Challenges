@@ -1,0 +1,24 @@
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        // Initialize a count to keep track of elements that are not equal to val
+
+        int count=0;
+        // Iterate through the array
+
+        for(int i=0;i<nums.length;i++){
+            // Check if the current element is not equal to val
+
+            if(nums[i]!=val){
+                // If the element is not equal to val, overwrite it at the count index
+
+            nums[count]=nums[i];
+                // Increment the count
+
+            count++;
+            }
+        }
+        return count;
+        // Return the count, which represents the length of the modified array
+
+    }
+}
